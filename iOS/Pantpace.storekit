@@ -1,0 +1,42 @@
+{
+  "identifier": "pantpace",
+  "nonRenewingSubscriptions": [],
+  "products": [],
+  "settings": {
+    "_askToBuyEnabled": false
+  },
+  "subscriptionGroups": [
+    {
+      "id": "21500000",
+      "localizations": [],
+      "name": "Pantpace Pro",
+      "subscriptions": [
+        {
+          "adHocOffers": [],
+          "codeOffers": [],
+          "displayPrice": "2.99",
+          "familyShareable": false,
+          "groupNumber": 1,
+          "internalID": "pantpace_pro_monthly",
+          "introductoryOffer": null,
+          "localizations": [
+            {
+              "description": "Trend alerts when readings exceed vet-recommended thresholds",
+              "displayName": "Pantpace Pro",
+              "locale": "en_US"
+            }
+          ],
+          "productID": "pantpace_pro_monthly",
+          "recurringSubscriptionPeriod": "P1M",
+          "referenceName": "Pantpace Pro Monthly",
+          "subscriptionGroupID": "21500000",
+          "type": "RecurringSubscription"
+        }
+      ]
+    }
+  ],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}

@@ -1,0 +1,75 @@
+name: Pantpace
+options:
+  bundleIdPrefix: com.shimondeitel.breathrate
+  deploymentTarget:
+    iOS: "17.0"
+  createIntermediateGroups: true
+  groupSortPosition: top
+settings:
+  base:
+    MARKETING_VERSION: "1.0"
+    CURRENT_PROJECT_VERSION: "1"
+    SWIFT_VERSION: "5.0"
+    DEVELOPMENT_TEAM: "W7Q885Q59C"
+    CODE_SIGN_STYLE: Automatic
+    IPHONEOS_DEPLOYMENT_TARGET: "17.0"
+    TARGETED_DEVICE_FAMILY: "1"
+    ENABLE_USER_SCRIPT_SANDBOXING: "YES"
+targets:
+  Pantpace:
+    type: application
+    platform: iOS
+    sources:
+      - path: Pantpace
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.breathrate
+        TARGETED_DEVICE_FAMILY: "1"
+        INFOPLIST_FILE: Pantpace/Info.plist
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME: AccentColor
+        ENABLE_PREVIEWS: "YES"
+        GENERATE_INFOPLIST_FILE: "NO"
+  PantpaceTests:
+    type: bundle.unit-test
+    platform: iOS
+    sources:
+      - path: PantpaceTests
+      - path: Pantpace.storekit
+    dependencies:
+      - target: Pantpace
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.breathrate.tests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+  PantpaceUITests:
+    type: bundle.ui-testing
+    platform: iOS
+    sources:
+      - path: PantpaceUITests
+    dependencies:
+      - target: Pantpace
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.shimondeitel.breathrate.uitests
+        GENERATE_INFOPLIST_FILE: "YES"
+        TARGETED_DEVICE_FAMILY: "1"
+schemes:
+  Pantpace:
+    build:
+      targets:
+        Pantpace: all
+        PantpaceTests: [test]
+        PantpaceUITests: [test]
+    run:
+      config: Debug
+      storeKitConfiguration: Pantpace.storekit
+    test:
+      config: Debug
+      storeKitConfiguration: Pantpace.storekit
+      targets:
+        - PantpaceTests
+        - PantpaceUITests
+    archive:
+      config: Release
